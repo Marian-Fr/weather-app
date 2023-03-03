@@ -11,6 +11,7 @@ ul {
 }
 li {
     list-style: none;
+    text-transform: capitalize;
 }
 .weather-app-wrapper{
     max-width: 600px;
