@@ -19,7 +19,8 @@ function displayTemperature(response){
     let cityElement=document.querySelector("#city");
     cityElement.innerHTML=response.data.city;
     let temperatureElement= document.querySelector("#temperature");
-    temperatureElement.innerHTML=Math.round(response.data.temperature.current);
+    celsiusTemperature=response.data.temperature.current
+    temperatureElement.innerHTML=Math.round(celsiusTemperature);
     let descriptionElement=document.querySelector("#description");
     descriptionElement.innerHTML=response.data.condition.description;
     let humidityElement=document.querySelector("#humidity");
@@ -29,10 +30,10 @@ function displayTemperature(response){
      let dateElement=document.querySelector("#date");
      dateElement.innerHTML=formatDate(response.data.time *1000);
     ;
-    let iconElement=document.querySelector("#icon")
+    let iconElement=document.querySelector("#icon");
     iconElement.setAttribute("src" ,`http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`);
-    iconElement.setAttribute("alt",response.data.condition.description)
-
+    iconElement.setAttribute("alt",response.data.condition.description);
+    
 }
 function search(city){
 let apiKey="2e8483398ocdfb8e6befab4eb2at6740";
@@ -46,10 +47,32 @@ function handleSumbit(event){
   search(cityInputElement.value);
 }
     
+function showFahrenheitTemperature(event){
+  event.preventDefault();
+  celsiusLinkElement.classList.remove("active")
+  fahrenheitLinkElement.classList.add("active")
+  let fahrenheitTemperature=(celsiusTemperature * 9)/5 + 32;
+let temperatureElement=document.querySelector("#temperature");
+temperatureElement.innerHTML=Math.round(fahrenheitTemperature);
+}
+function showCelsiusTemperature(event){
+  celsiusLinkElement.classList.add("active")
+  fahrenheitLinkElement.classList.remove("active")
+let temperatureElement=document.querySelector("#temperature");
+temperatureElement.innerHTML=Math.round(celsiusTemperature);
+}
 
-search("Lisbon")
 
-
+let celsiusTemperature=null;
 
 let form=document.querySelector("#search-form");
 form.addEventListener("submit", handleSumbit)
+
+let fahrenheitLinkElement=document.querySelector("#fahrenheit-link")
+fahrenheitLinkElement.addEventListener("click",showFahrenheitTemperature)
+
+let celsiusLinkElement=document.querySelector("#celsius-link")
+celsiusLinkElement.addEventListener("click",showCelsiusTemperature)
+
+
+search("Lisbon")

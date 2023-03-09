@@ -36,3 +36,20 @@ li {
     position: relative;
     font-size: 80px;
 }
+.active{
+text-decoration-line:none;
+color: black;
+}
+
+.active:hover {
+text-decoration-line: none;
+
+}
+.left{
+    text-decoration-line: none;
+}
+.left:hover {
+    text-decoration-line: none;
+    color: black;
+
+}
