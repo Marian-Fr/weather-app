@@ -47,6 +47,7 @@ text-decoration-line: none;
 }
 .left{
     text-decoration-line: none;
+    color: #8F0097;
 }
 .left:hover {
     text-decoration-line: none;
@@ -79,4 +80,11 @@ font-size: 13px;
 .weather-forecast-min{
     color: #8F0097;
     opacity: 0.7;
+}
+.link{
+    color: #8F0097;
+    text-decoration:underline;
+    opacity: 0.6;
+
+    
 }
