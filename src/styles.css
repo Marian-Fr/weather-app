@@ -53,3 +53,15 @@ text-decoration-line: none;
    
 
 }
+.btn {
+    background-color: #8F0097;
+    border-color:#8F0097;
+    
+
+}
+.btn:hover {
+    background-color: white;
+    color: #8F0097;
+    border-color: #8F0097 ;
+}
+
