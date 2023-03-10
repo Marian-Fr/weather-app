@@ -65,3 +65,18 @@ text-decoration-line: none;
     border-color: #8F0097 ;
 }
 
+.weather-forecast{
+    margin-top: 20px;
+    text-align: center;
+}
+.weather-forecast-date{
+    font-size: 16px;
+
+}
+.weather-forecast-temperature{
+font-size: 13px;
+}
+.weather-forecast-min{
+    color: #8F0097;
+    opacity: 0.7;
+}
