@@ -13,6 +13,34 @@ return `${day} ${hours}:${minutes}`
 
 
 }
+ function displayForecast() {
+  let forecastElement=document.querySelector("#forecast")
+  let forecastHTML=`<div class="row">`;
+  let days=["Tue","Wed","Thu", "Fri"]
+  days.forEach(function(day){
+    forecastHTML=forecastHTML + `
+<div class="col-3">
+    <div class="weather-forecast-date">
+    ${day}
+</div>
+    <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/scattered-clouds-day.png" alt="" width="36" />
+    <div class="weather-forecast-temperature">
+        <span class="weather-forecast-max">
+            18° |
+        </span>
+        <span class="weather-forecast-min">
+          12°
+        </span>
+  
+    </div>
+</div>
+`;
+
+  })
+  
+forecastHTML=forecastHTML +`</div>`
+  forecastElement.innerHTML= forecastHTML
+ }
 
 function displayTemperature(response){
     console.log(response.data)
@@ -76,3 +104,4 @@ celsiusLinkElement.addEventListener("click",showCelsiusTemperature)
 
 
 search("Lisbon")
+displayForecast()
