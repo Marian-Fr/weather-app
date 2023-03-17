@@ -35,8 +35,8 @@ return days[day];
     <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${forecastDay.condition.icon}.png" alt="" width="36" />
     <div class="weather-forecast-temperature">
         <span class="weather-forecast-max">
-           ${Math.round(forecastDay.temperature.maximum)}°|
-        </span>
+           ${Math.round(forecastDay.temperature.maximum)}°
+        </span>|
         <span class="weather-forecast-min">
           ${Math.round(forecastDay.temperature.minimum)}°
         </span>
@@ -120,4 +120,4 @@ let celsiusLinkElement=document.querySelector("#celsius-link")
 celsiusLinkElement.addEventListener("click",showCelsiusTemperature)
 
 
-search("Lisbon")
+search("Kyiv")
