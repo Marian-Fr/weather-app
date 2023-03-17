@@ -21,7 +21,11 @@ li {
 }
 .weather-app-wrapper{
     max-width: 700px;
-        margin: 30px auto;
+    margin: 30px auto;
+backdrop-filter: brightness(98%);
+border-radius: 12px;
+
+    
 }
 
 .weather-app {
