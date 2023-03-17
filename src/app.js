@@ -120,4 +120,4 @@ let celsiusLinkElement=document.querySelector("#celsius-link")
 celsiusLinkElement.addEventListener("click",showCelsiusTemperature)
 
 
-search("Kyiv")
+search("Salou")
